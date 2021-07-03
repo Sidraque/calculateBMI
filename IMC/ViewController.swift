@@ -1,0 +1,96 @@
+//
+//  ViewController.swift
+//  IMC
+//
+//  Created by Sidraque on 26/06/21.
+//
+
+import UIKit
+
+class ViewController: UIViewController {
+
+    
+    @IBOutlet weak var tfWeight: UITextField!
+    @IBOutlet weak var tfHeight: UITextField!
+    @IBOutlet weak var lbResult: UILabel!
+    @IBOutlet weak var ivResult: UIImageView!
+    @IBOutlet weak var viResult: UIView!
+    @IBOutlet weak var btCalculate: UIButton!
+    @IBOutlet weak var lbIdealWeight: UILabel!
+    @IBOutlet weak var weightHidden: UILabel!
+    
+    var imc: Double = 0
+    var idealWeight: Double = 0
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
+    
+      
+    func showResults(){
+        var result: String = ""
+        var image: String = ""
+        
+        switch imc {
+            case 0..<16:
+                result = "Magreza"
+                image = "magreza"
+            case 16..<18.5:
+                result = "Abaixo do peso"
+                image = "abaixo"
+            case 18.5..<25:
+                result = "Peso normal"
+                image = "normal"
+            case 25..<30:
+                result = "Sobrepeso"
+                image = "sobre"
+            default:
+                result = "Obesidade"
+                image = "obesidade"
+        
+        }
+        lbResult.text = "\(Float16(imc)): \(result)"
+        lbIdealWeight.text = "\(Float16(idealWeight))"
+        ivResult.image = UIImage(named: image)
+        viResult.isHidden = false
+        view.endEditing(true)
+    }
+    
+    
+    
+    @IBAction func calculate(_ sender: Any) {
+
+            let formatter = NumberFormatter()
+        
+            let weight = formatter.number(from: tfWeight.text!)!.doubleValue
+            let height = formatter.number(from: tfHeight.text!)!.doubleValue
+        
+
+            if weight < 1{
+                lbResult.text = "Peso inválido"
+                ivResult.isHidden = true
+                weightHidden.isHidden = true
+                lbIdealWeight.isHidden = true
+            }else if height < 1{
+                lbResult.text = "Altura inválida"
+                ivResult.isHidden = true
+                weightHidden.isHidden = true
+                lbIdealWeight.isHidden = true
+            }else{
+                imc = weight / pow(height, 2)
+                idealWeight = 21.75 * pow(height,2)
+                ivResult.isHidden = false
+                weightHidden.isHidden = false
+                lbIdealWeight.isHidden = false
+                showResults()
+            }
+        }
+
+}
+

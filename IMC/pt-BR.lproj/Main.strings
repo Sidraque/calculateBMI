@@ -1,0 +1,27 @@
+
+/* Class = "UILabel"; text = "Altura (m)"; ObjectID = "BSG-1r-Bi9"; */
+"BSG-1r-Bi9.text" = "Altura (m)";
+
+/* Class = "UILabel"; text = "Seu índice de massa corporal é"; ObjectID = "DGU-I2-05e"; */
+"DGU-I2-05e.text" = "Seu índice de massa corporal é";
+
+/* Class = "UITextField"; placeholder = "Ex: 1,75"; ObjectID = "O37-II-AQk"; */
+"O37-II-AQk.placeholder" = "Ex: 1,75";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Xi4-sy-PIc"; */
+"Xi4-sy-PIc.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Ex: 75"; ObjectID = "Yo0-ig-QQy"; */
+"Yo0-ig-QQy.placeholder" = "Ex: 75";
+
+/* Class = "UILabel"; text = "Cálculo do IMC"; ObjectID = "pYt-nK-km0"; */
+"pYt-nK-km0.text" = "Cálculo do IMC";
+
+/* Class = "UILabel"; text = "Peso (Kg)"; ObjectID = "r5l-l2-y6E"; */
+"r5l-l2-y6E.text" = "Peso (Kg)";
+
+/* Class = "UIButton"; normalTitle = "Calcular"; ObjectID = "re8-gK-bp4"; */
+"re8-gK-bp4.normalTitle" = "Calcular";
+
+/* Class = "UILabel"; text = "Descubra o seu índice de Massa Corporal"; ObjectID = "zOz-t9-PcS"; */
+"zOz-t9-PcS.text" = "Descubra o seu índice de Massa Corporal";
