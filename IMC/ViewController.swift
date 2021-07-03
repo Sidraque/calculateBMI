@@ -21,14 +21,25 @@ class ViewController: UIViewController {
     
     var imc: Double = 0
     var idealWeight: Double = 0
+    var test: Double = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        btCalculate.isHidden = true
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
+    }
+    
+  
+    @IBAction func tfEnableButton(_ sender: UITextField) {
+        if (tfWeight.text != "" && tfHeight.text != ""){
+            btCalculate.isHidden = false
+        }else{
+            btCalculate.isHidden = true
+        }
     }
     
     
