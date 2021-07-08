@@ -163,6 +163,7 @@
                         <outlet property="btCalculate" destination="re8-gK-bp4" id="bY2-ZX-fqW"/>
                         <outlet property="ivResult" destination="VNo-jY-1UX" id="GZf-lL-aqV"/>
                         <outlet property="lbIdealWeight" destination="AdL-Fc-pC0" id="58L-GF-uNW"/>
+                        <outlet property="lbInformation" destination="DGU-I2-05e" id="grU-jH-1Mh"/>
                         <outlet property="lbResult" destination="Xi4-sy-PIc" id="Zk1-pU-c8S"/>
                         <outlet property="tfHeight" destination="O37-II-AQk" id="BTe-p5-iLC"/>
                         <outlet property="tfWeight" destination="Yo0-ig-QQy" id="9Uq-Wh-zvD"/>

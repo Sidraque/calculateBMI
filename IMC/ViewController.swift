@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var btCalculate: UIButton!
     @IBOutlet weak var lbIdealWeight: UILabel!
     @IBOutlet weak var weightHidden: UILabel!
+    @IBOutlet weak var lbInformation: UILabel!
     
     var imc: Double = 0
     var idealWeight: Double = 0
@@ -73,13 +74,16 @@ class ViewController: UIViewController {
         ivResult.isHidden = true
         weightHidden.isHidden = true
         lbIdealWeight.isHidden = true
+        lbInformation.text = "Insira um valor maior que 0"
         lbResult.isHidden = true
     }
     
     func hiddenFalse(){
+        lbResult.isHidden = false
         ivResult.isHidden = false
         weightHidden.isHidden = false
         lbIdealWeight.isHidden = false
+        lbInformation.text = "Seu índice de massa corporal é"
     }
     
     
