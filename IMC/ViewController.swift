@@ -21,7 +21,6 @@ class ViewController: UIViewController {
     
     var imc: Double = 0
     var idealWeight: Double = 0
-    var test: Double = 0
     
     
     override func viewDidLoad() {
@@ -33,22 +32,19 @@ class ViewController: UIViewController {
         view.endEditing(true)
     }
     
-  
     @IBAction func tfEnableButton(_ sender: UITextField) {
-        if (tfWeight.text != "" && tfHeight.text != ""){
-            btCalculate.isHidden = false
-        }else{
+        if (tfWeight.text == "" || tfHeight.text == ""){
             btCalculate.isHidden = true
+        }else{
+            btCalculate.isHidden = false
         }
     }
     
-    
-      
     func showResults(){
-        var result: String = ""
-        var image: String = ""
+       var result: String = ""
+       var image: String = ""
         
-        switch imc {
+       switch imc {
             case 0..<16:
                 result = "Magreza"
                 image = "magreza"
@@ -73,35 +69,37 @@ class ViewController: UIViewController {
         view.endEditing(true)
     }
     
+    func hiddenTrue(){
+        ivResult.isHidden = true
+        weightHidden.isHidden = true
+        lbIdealWeight.isHidden = true
+        lbResult.isHidden = true
+    }
+    
+    func hiddenFalse(){
+        ivResult.isHidden = false
+        weightHidden.isHidden = false
+        lbIdealWeight.isHidden = false
+    }
+    
+    
     
     
     @IBAction func calculate(_ sender: Any) {
 
-            let formatter = NumberFormatter()
+        let formatter = NumberFormatter()
         
-            let weight = formatter.number(from: tfWeight.text!)!.doubleValue
-            let height = formatter.number(from: tfHeight.text!)!.doubleValue
+        let weight = formatter.number(from: tfWeight.text!)!.doubleValue
+        let height = formatter.number(from: tfHeight.text!)!.doubleValue
         
-
-            if weight < 1{
-                lbResult.text = "Peso inválido"
-                ivResult.isHidden = true
-                weightHidden.isHidden = true
-                lbIdealWeight.isHidden = true
-            }else if height < 1{
-                lbResult.text = "Altura inválida"
-                ivResult.isHidden = true
-                weightHidden.isHidden = true
-                lbIdealWeight.isHidden = true
-            }else{
-                imc = weight / pow(height, 2)
-                idealWeight = 21.75 * pow(height,2)
-                ivResult.isHidden = false
-                weightHidden.isHidden = false
-                lbIdealWeight.isHidden = false
-                showResults()
-            }
+        if(weight == 0 || height == 0){
+            hiddenTrue()
+        }else{
+            imc = weight / pow(height, 2)
+            idealWeight = 21.75 * pow(height,2)
+            hiddenFalse()
+            showResults()
         }
-
+    }
 }
 
